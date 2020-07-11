@@ -223,7 +223,7 @@ public class AdminMenu extends CommonMenu {
 		int newYear = 0;
 		boolean yearAgain = true;
 		while (yearAgain) {
-			System.out.print("Enter new movie's year: ");
+			System.out.print("Enter new movie's year (Enter 0 to keep old info):");
 			newYear = intScan();
 			try {
 				mec.validateMovieYear(newYear);

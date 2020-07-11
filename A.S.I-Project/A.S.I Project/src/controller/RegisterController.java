@@ -33,7 +33,10 @@ public class RegisterController {
 		if (!country.isEmpty()) {
 			rs.addCountryDB(email, country);
 		}
-		if (!phone.isEmpty()) {
+		if (phone.equals("0")) {
+			rs.addPhoneDB(email, "");
+		}
+		else {
 			rs.addPhoneDB(email, phone);
 		}
 		rs.writeMapToFile();

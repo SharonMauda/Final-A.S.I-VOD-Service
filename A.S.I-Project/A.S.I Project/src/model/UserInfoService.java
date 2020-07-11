@@ -85,9 +85,12 @@ public class UserInfoService {
 		if (age != 0)
 			user.setAge(age);
 		if (!country.equals(""))
-			user.setFirstname(country);
-		if (!phone.equals(""))
+			user.setCountry(country);
+		if (phone.equals("0"))
+			user.setPhoneNumber(user.getPhoneNumber());
+		else {
 			user.setPhoneNumber(phone);
+		}
 		userMap.remove(email);
 		userMap.put(email, user);
 	}

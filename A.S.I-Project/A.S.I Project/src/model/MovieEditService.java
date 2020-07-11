@@ -55,11 +55,13 @@ public class MovieEditService {
 	
 	// Edits the object found by the hash key by the user's input.
 	public void editMovieDB(String chosenMovie, String newName, String desc, String genre, int length, int year) {
+		String rightName = newName;
 		HashMap<String, Movie> movieMap = moviedbObj.getMap();
 		Movie oldMovie = movieMap.get(chosenMovie);
 		Movie newMovie = new Movie();
-		if (newName.equals(""))
-			newMovie.setName(oldMovie.getName());
+		if (newName.equals("")) {
+			rightName = oldMovie.getName();
+			newMovie.setName(oldMovie.getName());}
 		else {
 			newMovie.setName(newName);
 		}
@@ -80,6 +82,6 @@ public class MovieEditService {
 		} else
 			newMovie.setYear(oldMovie.getYear());
 		movieMap.remove(chosenMovie);
-		movieMap.put(newName, newMovie);
+		movieMap.put(rightName, newMovie);
 	}
 }

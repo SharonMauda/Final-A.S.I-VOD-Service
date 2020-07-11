@@ -87,7 +87,7 @@ public class RegistrationPage extends IOValidation {
 			String country = stringScan();
 			boolean phoneAgain = true;
 			while (phoneAgain) {
-				System.out.println("Enter your phone number*: ");
+				System.out.println("Enter your phone number (enter 0 to skip): ");
 				phone = stringScan();
 				try {
 					uic.validatePhone(phone);

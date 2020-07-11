@@ -69,7 +69,7 @@ public class UserInfoController {
 				throw new Exception("Phone number must only include digits.");
 			}
 		}
-		if (phone.length() < 10)
+		if (!phone.equals("0") && phone.length() < 10)
 			throw new Exception("Phone number must include 10 digits");
 	}
 

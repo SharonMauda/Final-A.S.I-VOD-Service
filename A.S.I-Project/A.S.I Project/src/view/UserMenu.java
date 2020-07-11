@@ -184,8 +184,9 @@ public class UserMenu extends CommonMenu {
 					updateCC(email);
 					System.out.println("Showing new credit card info: ");
 					System.out.println(uic.getUserCC(email));
+				} else {
+					System.out.println("Credit card info is invalid / doesn't exist.");
 				}
-				System.out.println("Credit card info is invalid / doesn't exist.");
 				System.out.print("Do you want to edit your crdeit card details - y/n? ");
 				answer = guaranteeInput();
 				if (!answer) {
